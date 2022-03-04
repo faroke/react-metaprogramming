@@ -25,8 +25,8 @@ function Display({value}){
             <h2>Rendu</h2>
             {config.map((key, index) => {
                 return <div key={index}>
-                    <input placeholder={key.key} onChange={(e) => {
-                        if(typeof e.target.value === key.type && eval(`${e.target.value} ${key.condition}`))
+                    <input placeholder={key.key} type={key.type} onChange={(e) => {
+                        if(eval(`${e.target.value} ${key.condition}`))
                             console.log('VALIDE');
                         else
                             console.log('INVALIDE');
