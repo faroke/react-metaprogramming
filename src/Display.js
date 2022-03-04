@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-function Display({myObject, partner}){
+function Display({value}){
     const [config, setConfig] = useState([])
 
     useEffect(() => {
@@ -10,23 +10,27 @@ function Display({myObject, partner}){
     return (
 
         <>
-            <h1>Config {partner}</h1>
-            {Object.keys(myObject).map((key, index) => {
+            <h1>Display</h1>
+            {value.map((key, index) => {
                 return <div key={index}>
-                    <button onClick={() => setConfig([...config, key])}>Add {key}</button>
+                    <button onClick={() => setConfig([...config, key])}>Add {key.key}</button>
                 </div>
             })}
             <p>
                 {config.map((key) => {
-                    return key + ', '
+                    return key.key + ', '
                 })}
             </p>
 
-            <h2>Rendu {partner}</h2>
+            <h2>Rendu</h2>
             {config.map((key, index) => {
                 return <div key={index}>
-                    <label>{key} : </label>
-                    <input placeholder={myObject[key]}/>
+                    <input placeholder={key.key} onChange={(e) => {
+                        if(eval(e.target.value + key.condition))
+                            console.log('VALIDE');
+                        else
+                            console.log('INVALIDE');
+                    }}/>
                 </div>
             })
             }
