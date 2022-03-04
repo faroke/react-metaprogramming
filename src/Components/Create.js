@@ -8,7 +8,6 @@ function Create({value}) {
         event.preventDefault();
         const values = getFormValues(event)
         setConfig([...config, {key: values.key, type: values.type, condition: values.condition}])
-        console.log(config)
     }
     return (
         <>
