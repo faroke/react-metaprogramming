@@ -8,6 +8,7 @@ function Display({myObject, partner}){
     }, [config])
 
     return (
+
         <>
             <h1>Config {partner}</h1>
             {Object.keys(myObject).map((key, index) => {

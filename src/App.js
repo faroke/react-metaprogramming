@@ -13,6 +13,7 @@ function App() {
     created_at: new Date()
   }
   return (
+
     <div className="App">
         <Display myObject={demoObject1} partner="Entreprise 1"/>
         <Display myObject={demoObject2} partner="Entreprise 2"/>
