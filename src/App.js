@@ -1,5 +1,5 @@
 import './App.css';
-import Display from "./Display";
+import Display from "./Components/Display";
 import {useState} from "react";
 import Create from "./Components/Create";
 
