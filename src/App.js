@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Display from "./Display";
 
 function App() {
+  let demoObject1 = {
+    title: "My Title is amazing",
+    numberOfAuthors: 2,
+    date: new Date()
+  }
+  let demoObject2 = {
+    superTitle: "My Title is Super",
+    description: "WOW MY DESCRIPTION IS AWESOME",
+    created_at: new Date()
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Display myObject={demoObject1} partner="Entreprise 1"/>
+        <Display myObject={demoObject2} partner="Entreprise 2"/>
     </div>
   );
 }
